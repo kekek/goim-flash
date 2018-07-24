@@ -4,8 +4,10 @@
 // Reference: http://tools.ietf.org/html/rfc6455
 
 (function() {
-  
-  if (window.WEB_SOCKET_FORCE_FLASH) {
+
+    window.WEB_SOCKET_FORCE_FLASH = true;
+
+    if (window.WEB_SOCKET_FORCE_FLASH) {
     // Keeps going.
   } else if (window.WebSocket) {
     return;

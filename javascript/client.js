@@ -20,9 +20,9 @@
 
         function connect() {
             var url = self.wsUrl;
-            // if (win.WEB_SOCKET_FORCE_FLASH) {
-            //     url = self.flashUrl;
-            // }
+            if (win.WEB_SOCKET_FORCE_FLASH) {
+                url = self.flashUrl;
+            }
 
             var ws = new WebSocket(url);
             var auth = false;
@@ -33,6 +33,7 @@
             }
 
             ws.onmessage = function(evt) {
+                console.log("-----",evt)
                 var receives = JSON.parse(evt.data)
                 for(var i=0; i<receives.length; i++) {
                     var data = receives[i]
@@ -58,23 +59,42 @@
             }
 
             function heartbeat() {
+
+                var authData = {
+                    "isSubRoom": true,
+                    "message_token": "2a302d1d26ec76ae5d892cbb8be1de01",
+                    "origin": "ktkt",
+                    "roomid": 1531468811,
+                    "rtype": "vip",
+                    "teacher_id": 1371765374235354,
+                    "sina": "0",
+                    "version":"1"
+                }
                 ws.send(JSON.stringify({
                     'ver': 1,
                     'op': 2,
                     'seq': 2,
-                    'body': {}
+                    'body': authData
                 }));
                 
             }
 
             function getAuth() {
+                var authData = {
+                    "isSubRoom": true,
+                    "message_token": "2a302d1d26ec76ae5d892cbb8be1de01",
+                    "origin": "ktkt",
+                    "roomid": 1531468811,
+                    "rtype": "vip",
+                    "teacher_id": 1371765374235354,
+                    "sina": "0",
+                    "version":"1"
+                }
                 ws.send(JSON.stringify({
                     'ver': 1,
                     'op': 7,
                     'seq': 1,
-                    'body': {
-                        'data': {}
-                    }
+                    'body': authData
                 }));
             }
 

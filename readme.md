@@ -3,3 +3,6 @@
 python -m http.server 8001
 
 
+### python2 静态资源服务器
+
+pytyon -m SimpleHTTPServer 8080

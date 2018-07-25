@@ -62,7 +62,7 @@
 
                 var authData = {
                     "isSubRoom": true,
-                    "message_token": "2a302d1d26ec76ae5d892cbb8be1de01",
+                    "message_token": "b0990089304dbbe313daca3ad1f6d95f",
                     "origin": "ktkt",
                     "roomid": 1531468811,
                     "rtype": "vip",
@@ -82,7 +82,7 @@
             function getAuth() {
                 var authData = {
                     "isSubRoom": true,
-                    "message_token": "2a302d1d26ec76ae5d892cbb8be1de01",
+                    "message_token": "b0990089304dbbe313daca3ad1f6d95f",
                     "origin": "ktkt",
                     "roomid": 1531468811,
                     "rtype": "vip",

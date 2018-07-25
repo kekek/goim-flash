@@ -19,7 +19,8 @@
     <script>
       var client = new MyClient({
         notify: function(data) {
-          alert(data)
+
+          alert(JSON.stringify(data))
         },
         wsUrl:'ws://106.75.119.3:10081/',
           Url:'ws://106.75.119.3:10081/',
